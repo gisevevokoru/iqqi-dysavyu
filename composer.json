@@ -1,0 +1,14 @@
+{
+    "name": "gisevevokoru/iqqi-dysavyu",
+    "require": {
+        "gisevevokoru/ezze-siftuz-quantities-v2": "dev-master",
+        "gisevevokoru/ezze-siftuz-shipments-v1": "dev-master",
+        "gisevevokoru/ezze-siftuz-returns-v2": "dev-master",
+        "gisevevokoru/ezze-siftuz-receipts-v1": "dev-master",
+        "gisevevokoru/ezze-siftuz-products-v1": "dev-master",
+        "gisevevokoru/ezze-siftuz-orders-v2": "dev-master",
+        "predis/predis": "^2.0@dev",
+        "beberlei/assert": "dev-master"
+    },
+    "minimum-stability": "dev"
+}
