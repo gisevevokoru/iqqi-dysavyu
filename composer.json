@@ -7,8 +7,8 @@
         "gisevevokoru/ezze-siftuz-receipts-v1": "dev-master",
         "gisevevokoru/ezze-siftuz-products-v1": "dev-master",
         "gisevevokoru/ezze-siftuz-orders-v2": "dev-master",
-        "predis/predis": "^2.0@dev",
-        "beberlei/assert": "dev-master"
-    },
-    "minimum-stability": "dev"
+        "predis/predis": "^1.1",
+        "beberlei/assert": "dev-master",
+        "kepawni/limerick": "^0.1"
+    }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86ad210330595f0c33606a47a2b1c161",
+    "content-hash": "44a409c0bddd33b6b0f29d09f155f34c",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -374,16 +374,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.x-dev",
+            "version": "6.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "400cefd25a23a3098486bfb52685b5367a464171"
+                "reference": "43ece0e75098b7ecd8d13918293029e555a50f82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/400cefd25a23a3098486bfb52685b5367a464171",
-                "reference": "400cefd25a23a3098486bfb52685b5367a464171",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/43ece0e75098b7ecd8d13918293029e555a50f82",
+                "reference": "43ece0e75098b7ecd8d13918293029e555a50f82",
                 "shasum": ""
             },
             "require": {
@@ -437,27 +437,27 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-12-30T04:52:42+00:00"
+            "time": "2019-12-23T11:57:10+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "dev-master",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "ac2529fc650684c5cd687e2b462d046cdbed556e"
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/ac2529fc650684c5cd687e2b462d046cdbed556e",
-                "reference": "ac2529fc650684c5cd687e2b462d046cdbed556e",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7.27 || ^7.5"
+                "phpunit/phpunit": "^4.0"
             },
             "type": "library",
             "extra": {
@@ -488,20 +488,20 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2019-12-17T17:19:17+00:00"
+            "time": "2016-12-20T10:07:11+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.x-dev",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "e193ff330a0f28b5e5f65ed3d804f5e2a89376e3"
+                "reference": "239400de7a173fe9901b9ac7c06497751f00727a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/e193ff330a0f28b5e5f65ed3d804f5e2a89376e3",
-                "reference": "e193ff330a0f28b5e5f65ed3d804f5e2a89376e3",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/239400de7a173fe9901b9ac7c06497751f00727a",
+                "reference": "239400de7a173fe9901b9ac7c06497751f00727a",
                 "shasum": ""
             },
             "require": {
@@ -559,20 +559,50 @@
                 "uri",
                 "url"
             ],
-            "time": "2020-02-04T14:54:51+00:00"
+            "time": "2019-07-01T23:21:34+00:00"
         },
         {
-            "name": "predis/predis",
-            "version": "dev-master",
+            "name": "kepawni/limerick",
+            "version": "v0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
-                "reference": "d72f0678bade78af953605622760fe262d82eb58"
+                "url": "https://github.com/kepawni/limerick.git",
+                "reference": "86a5906465f70c35ef59fc93864f1c687d9d5c1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/d72f0678bade78af953605622760fe262d82eb58",
-                "reference": "d72f0678bade78af953605622760fe262d82eb58",
+                "url": "https://api.github.com/repos/kepawni/limerick/zipball/86a5906465f70c35ef59fc93864f1c687d9d5c1c",
+                "reference": "86a5906465f70c35ef59fc93864f1c687d9d5c1c",
+                "shasum": ""
+            },
+            "require": {
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kepawni\\Limerick\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "description": "A Redis-based Hexastore implementation",
+            "time": "2020-02-11T17:08:09+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
                 "shasum": ""
             },
             "require": {
@@ -586,11 +616,6 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Predis\\": "src/"
@@ -614,20 +639,20 @@
                 "predis",
                 "redis"
             ],
-            "time": "2017-07-12T14:44:10+00:00"
+            "time": "2016-06-16T16:22:20+00:00"
         },
         {
             "name": "psr/http-message",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "efd67d1dc14a7ef4fc4e518e7dee91c271d524e4"
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/efd67d1dc14a7ef4fc4e518e7dee91c271d524e4",
-                "reference": "efd67d1dc14a7ef4fc4e518e7dee91c271d524e4",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
                 "shasum": ""
             },
             "require": {
@@ -664,7 +689,7 @@
                 "request",
                 "response"
             ],
-            "time": "2019-08-29T13:16:46+00:00"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -709,7 +734,7 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "gisevevokoru/ezze-siftuz-quantities-v2": 20,
         "gisevevokoru/ezze-siftuz-shipments-v1": 20,
@@ -717,7 +742,6 @@
         "gisevevokoru/ezze-siftuz-receipts-v1": 20,
         "gisevevokoru/ezze-siftuz-products-v1": 20,
         "gisevevokoru/ezze-siftuz-orders-v2": 20,
-        "predis/predis": 20,
         "beberlei/assert": 20
     },
     "prefer-stable": false,
