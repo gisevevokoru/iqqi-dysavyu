@@ -8,6 +8,7 @@
     },
     "require": {
         "ext-dom": "*",
+        "ext-json": "*",
         "ext-pdo": "*",
         "gisevevokoru/ezze-siftuz-quantities-v2": "dev-master",
         "gisevevokoru/ezze-siftuz-shipments-v1": "dev-master",
