@@ -21,7 +21,7 @@ suspicion that we might need an update.
 
 ## Convert old product XML to new JSON
 
-The conversion requires knowledge of the available categories and their allowed ar required attributes. That's why we
+The conversion requires knowledge of the available categories and their allowed or required attributes. That's why we
 need Redis here, where this information is stored. (See previous section on how to initialize or update this store.)
 
     php bin/product-xml-to-json.php OPTIONS XML_IN_FILE [ > JSON_OUT_FILE ]
