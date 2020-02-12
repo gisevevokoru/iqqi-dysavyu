@@ -1,8 +1,9 @@
 {
     "name": "gisevevokoru/iqqi-dysavyu",
     "autoload": {
+        "classmap": ["src/"],
         "psr-4": {
-            "deswerve\\colin\\": "src/deswerve/colin/"
+            "deswerve\\": "src/deswerve/"
         }
     },
     "require": {
