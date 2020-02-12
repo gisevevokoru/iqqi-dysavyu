@@ -1,24 +1,10 @@
 <?php declare(strict_types=1);
 use deswerve\colin\CommandLineInterface;
-use EzzeSiftuz\ProductsV1\Configuration;
-use GuzzleHttp\Client as HttpClient;
 
 class RetrievalFunctions
 {
-    public static function createClientWithOAuthToken(string $oAuthToken): HttpClient
-    {
-        return new HttpClient(['headers' => ['Authorization' => 'Bearer ' . $oAuthToken]]);
-    }
-
-    public static function createProductApiConfiguration(string $host): Configuration
-    {
-        $configuration = Configuration::getDefaultConfiguration();
-        $configuration->setHost(sprintf("https://%s", $host));
-        return $configuration;
-    }
-
     /**
-     * To iterate over the responses of paged requests until there are no more pages, like for instance
+     * To iterate over the responses of paged requests until there are no more pages, like instead of for instance
      *     $result = $fooApi->getBarGroups('quux', true, null, 100);
      *     $result = $fooApi->getBarGroups('quux', true, 1, 100);
      *     $result = $fooApi->getBarGroups('quux', true, 2, 100);
@@ -91,7 +77,7 @@ class RetrievalFunctions
         }
     }
 
-    public static function requestNewOttoApiToken(string $hostPort, string $username, string $phrase): string
+    public static function requestNewApiToken(string $hostPort, string $username, string $phrase): string
     {
         return json_decode(
             file_get_contents(

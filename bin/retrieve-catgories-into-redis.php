@@ -1,25 +1,29 @@
 <?php declare(strict_types=1);
 use EzzeSiftuz\ProductsV1\Api\CategoriesApi;
+use EzzeSiftuz\ProductsV1\Configuration;
 use EzzeSiftuz\ProductsV1\Model\CategoryGroups;
+use GuzzleHttp\Client as HttpClient;
 use Kepawni\Limerick\Hexastore;
 use Predis\Client;
+use RetrievalFunctions as util;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 //
-$config = RetrievalFunctions::readConfigFromCommandLine($argv);
-$client = RetrievalFunctions::createClientWithOAuthToken(RetrievalFunctions::requestNewOttoApiToken($config->market, $config->username, $config->phrase));
-$apiConfig = RetrievalFunctions::createProductApiConfiguration($config->market);
-$categoriesApi = new CategoriesApi($client, $apiConfig);
+$config = util::readConfigFromCommandLine($argv);
+$apiToken = util::requestNewApiToken($config->market, $config->username, $config->phrase);
+$apiConfig = Configuration::getDefaultConfiguration()->setHost(sprintf("https://%s", $config->market));
 $redisOptions = ['parameters' => ['database' => $config->{'redis-db-index'}, 'password' => $config->{'redis-secret'}]];
 [$redisHost, $redisPort] = explode(':', $config->redis . ':6379');
 $redis = new Client(sprintf("tcp://%s:%d", $redisHost, $redisPort), $redisOptions);
 $hexastore = new Hexastore($redis, $config->hexastore);
 //
+$client = new HttpClient(['headers' => ['Authorization' => 'Bearer ' . $apiToken]]);
+$categoriesApi = new CategoriesApi($client, $apiConfig);
 $getCategoryGroups = function (?int $page) use ($categoriesApi) {
     return $categoriesApi->getCategoryGroups($page);
 };
 /** @var CategoryGroups $categoryGroups */
-foreach (RetrievalFunctions::iteratePages($getCategoryGroups) as $categoryGroups) {
+foreach (util::iteratePages($getCategoryGroups) as $categoryGroups) {
     foreach ($categoryGroups->getCategoryGroups() as $categoryGroup) {
         $serializedCategoryGroup = serialize($categoryGroup);
         $catGrpKey = 'cat-grp:' . sha1($serializedCategoryGroup);
