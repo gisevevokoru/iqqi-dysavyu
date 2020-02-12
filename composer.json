@@ -1,5 +1,10 @@
 {
     "name": "gisevevokoru/iqqi-dysavyu",
+    "autoload": {
+        "psr-4": {
+            "deswerve\\colin\\": "src/deswerve/colin/"
+        }
+    },
     "require": {
         "gisevevokoru/ezze-siftuz-quantities-v2": "dev-master",
         "gisevevokoru/ezze-siftuz-shipments-v1": "dev-master",
