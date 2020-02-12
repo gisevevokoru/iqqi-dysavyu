@@ -125,7 +125,7 @@ EOD;
 
     public static function readConfigFromCommandLine(array $argv): object
     {
-        $colin = new CommandLineInterface($argv[0], ['OPTIONS XML_IN_FILES... [ > JSON_OUT_FILE ]']);
+        $colin = new CommandLineInterface($argv[0], ['OPTIONS XML_IN_FILE [ > JSON_OUT_FILE ]']);
         $commandLine = $colin
             ->addOption('redis', 'Host (and port if not 6379) to Redis server, e. g. "example.com:6379"', ['HOSTPORT'], 'r')
             ->addOption('redis-db-index', 'Redis database index, default 0', ['NUM'], 'i', true, [0])
@@ -153,6 +153,8 @@ EOD;
             );
             if (empty($commandLine->params) || !is_file($commandLine->params[0])) {
                 throw new RuntimeException('Missing or invalid input file');
+            } elseif (count($commandLine->params) > 1) {
+                throw new RuntimeException('Unsupported extra parameters found');
             }
             [$config->inputFile] = $commandLine->params;
             return $config;

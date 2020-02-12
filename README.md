@@ -2,7 +2,7 @@
 
 ## Convert old product XML to new JSON
 
-    php bin/product-xml-to-json.php OPTIONS XML_IN_FILES... [ > JSON_OUT_FILE ]
+    php bin/product-xml-to-json.php OPTIONS XML_IN_FILE [ > JSON_OUT_FILE ]
 
     Options (required):
       -r  --redis HOSTPORT    Host (and port if not 6379) to Redis server, e. g. "example.com:6379"
