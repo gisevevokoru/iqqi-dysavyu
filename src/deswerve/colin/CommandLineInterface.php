@@ -1,6 +1,7 @@
 <?php
 namespace deswerve\colin;
 
+use stdClass;
 use RuntimeException;
 
 /**
