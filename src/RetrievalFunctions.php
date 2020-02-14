@@ -79,7 +79,7 @@ class RetrievalFunctions
 
     public static function requestNewApiToken(string $hostPort, string $username, string $phrase): string
     {
-        return json_decode(
+        $data = json_decode(
             file_get_contents(
                 sprintf('https://%s/v1/token', $hostPort),
                 false,
@@ -104,9 +104,11 @@ class RetrievalFunctions
                     ]
                 )
             ),
-            false,
-            2,
-            JSON_THROW_ON_ERROR
-        )->access_token;
+            false
+        );
+        if ($data === null) {
+            throw new UnexpectedValueException(json_last_error_msg(), json_last_error());
+        }
+        return $data->access_token;
     }
 }
